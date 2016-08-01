@@ -4440,7 +4440,7 @@ init_lread (void)
               Lisp_Object sitelisp;
               sitelisp = decode_env_path (0, PATH_SITELOADSEARCH, 0);
               if (! NILP (sitelisp))
-                default_lpath = nconc2 (sitelisp, default_lpath);
+                default_lpath = nconc2 (default_lpath, sitelisp);
             }
 
           Vload_path = Qnil;
@@ -4470,7 +4470,7 @@ init_lread (void)
         {
           Lisp_Object sitelisp;
           sitelisp = decode_env_path (0, PATH_SITELOADSEARCH, 0);
-          if (! NILP (sitelisp)) Vload_path = nconc2 (sitelisp, Vload_path);
+          if (! NILP (sitelisp)) Vload_path = nconc2 (Vload_path, sitelisp);
         }
     }
 
